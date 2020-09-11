@@ -9,7 +9,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 
 import { User } from './user.model';
 
-const PROTOCOL = 'http';
+const PROTOCOL = 'https';
 const PORT = 3500;
 
 @Injectable()
