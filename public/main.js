@@ -495,7 +495,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const PROTOCOL = 'http';
+const PROTOCOL = 'https';
 const PORT = 3500;
 class RestDataSource {
     constructor(http, jwtService) {
@@ -509,7 +509,8 @@ class RestDataSource {
             })
         };
         this.user = new _user_model__WEBPACK_IMPORTED_MODULE_2__["User"]();
-        this.baseUrl = `${PROTOCOL}://${location.hostname}:${PORT}/api/`;
+        // this.baseUrl = `${PROTOCOL}://${location.hostname}:${PORT}/api/`;
+        this.baseUrl = `https://comp229-f2020-week10.herokuapp.com/api/`;
     }
     getBooks() {
         return this.http.get(this.baseUrl + 'book-list');
