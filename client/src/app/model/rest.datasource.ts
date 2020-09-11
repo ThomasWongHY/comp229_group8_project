@@ -32,7 +32,8 @@ export class RestDataSource
               private jwtService: JwtHelperService)
   {
     this.user = new User();
-    this.baseUrl = `${PROTOCOL}://${location.hostname}:${PORT}/api/`;
+    // this.baseUrl = `${PROTOCOL}://${location.hostname}:${PORT}/api/`;
+    this.baseUrl = `https://comp229-f2020-week10.herokuapp.com/api/`;
   }
 
   getBooks(): Observable<Book[]>
