@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { BookStoreModule } from './book-store/book-store.module';
 import { PagesModule } from './pages/pages.module';
 import { JwtModule, JwtHelperService, JwtInterceptor } from '@auth0/angular-jwt';
+import { On9StoreComponent } from './on9-store/on9-store.component';
 
 export function jwtTokenGetter(): string
 {
@@ -14,6 +15,7 @@ export function jwtTokenGetter(): string
 @NgModule({
   declarations: [
     AppComponent,
+    On9StoreComponent,
   ],
   imports: [
     BrowserModule,

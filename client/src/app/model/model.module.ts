@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BookRepository} from './book.repository';
+import { ProductRepository} from './product.repository';
 import { StaticDataSource } from './static.datasource';
 import { Cart } from './cart.model';
 import { RestDataSource } from './rest.datasource';
@@ -9,7 +10,7 @@ import { OrderRepository } from './order.repository';
 
 @NgModule({
   imports: [HttpClientModule],
-  providers: [BookRepository, StaticDataSource, Cart, Order, OrderRepository,
+  providers: [BookRepository, ProductRepository, StaticDataSource, Cart, Order, OrderRepository,
   {provide: StaticDataSource, useClass: RestDataSource},
   RestDataSource]
 })

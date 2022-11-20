@@ -39,6 +39,45 @@ module.exports = function () {
         price: 14.96,
       },
     ],
-    orders: []
+    orders: [],
+    "product-list": [
+      {
+         _id: 1,
+         name: "Car",
+         ptype: "Toy",
+         description: "This is a toy",
+         price: 10,
+         quantity: 20,
+         imageurl: "./Content/img/car.jpg"
+      },
+      {
+        _id: 1,
+        name: "Car",
+        ptype: "Toy",
+        description: "This is a toy",
+        price: 10,
+        quantity: 20,
+        imageurl: "./Content/img/toy.jpg"
+      },
+      {
+        _id: 2,
+        name: "Biscuit",
+        ptype: "Food",
+        description: "This is a biscuit",
+        price: 10,
+        quantity: 20,
+        imageurl: "./Content/img/food.jpg"
+      },
+      {
+        _id: 3,
+        name: "Bread",
+        ptype: "Food",
+        description: "This is bread",
+        price: 10,
+        quantity: 20,
+        imageurl: "./Content/img/food.jpg"
+      },
+    ]
+
   }
 }

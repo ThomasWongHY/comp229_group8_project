@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
-import { ProductsComponent } from './pages/products/products.component';
+import { On9StoreComponent } from './on9-store/on9-store.component';
 import { ServicesComponent } from './pages/services/services.component';
 import { BookStoreComponent } from './book-store/book-store.component';
 import { ContactComponent } from './pages/contact/contact.component';
@@ -14,7 +14,7 @@ import { StoreFirstGuard } from './guards/storeFirst.guard';
 const routes: Routes = [
  {path: 'home', component: HomeComponent, data: {title: 'Home'}},
  {path: 'about', component: AboutComponent, data: {title: 'About'}},
- {path: 'products', component: ProductsComponent, data: {title: 'Products'}},
+ {path: 'products', component: On9StoreComponent, data: {title: 'Products'}},
  {path: 'services', component: ServicesComponent, data: {title: 'Services'}},
  {path: 'book-list', component: BookStoreComponent, data: { title: 'Book Store'}, canActivate: [StoreFirstGuard]},
  {path: 'cart', component: CartDetailComponent, data: { title: 'Shopping Cart'}, canActivate: [StoreFirstGuard]},
