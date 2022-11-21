@@ -14,8 +14,9 @@ export class Product
   public toString(): string
   {
     return `
-    Book
+    Product
     -------------------------------
+    _id        : ${this._id}
     Name       : ${this.name}
     PType      : ${this.ptype}
     Description: ${this.description}

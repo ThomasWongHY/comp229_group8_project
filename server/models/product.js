@@ -2,6 +2,7 @@ let mongoose = require('mongoose');
 
 // create a model class
 let productModel = mongoose.Schema({
+    _id: Number,
     name: String,
     ptype: String,
     description: String,
