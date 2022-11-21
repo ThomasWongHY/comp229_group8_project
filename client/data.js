@@ -48,7 +48,7 @@ module.exports = function () {
          description: "This is a toy",
          price: 10,
          quantity: 20,
-         imageurl: "./Content/img/car.jpg"
+         imageurl: "../../Content/images/car.jpg"
       },
       {
         _id: 1,

@@ -12,13 +12,23 @@ let Order = mongoose.Schema({
     cart:
     {
         lines:
-        [{book:
+/*         [{book:
             {
                 name: String,
                 author: String,
                 published: String,
                 description: String,
                 price: Number
+            },
+            quantity: Number
+        }], */
+        [{product:
+            {
+                name: String,
+                ptype: String,
+                description: String,
+                price: Number,
+                imageurl: String
             },
             quantity: Number
         }],

@@ -40,6 +40,7 @@ export class RestDataSource
   getProducts(): Observable<Product[]>
   {
     return this.http.get<Product[]>(this.baseUrl + 'product-list');
+    //return this.http.get<Product[]>(this.baseUrl + 'product');
   }
 
   saveOrder(order: Order): Observable<Order>

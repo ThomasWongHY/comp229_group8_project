@@ -14,9 +14,9 @@ import { StoreFirstGuard } from './guards/storeFirst.guard';
 const routes: Routes = [
  {path: 'home', component: HomeComponent, data: {title: 'Home'}},
  {path: 'about', component: AboutComponent, data: {title: 'About'}},
- {path: 'products', component: On9StoreComponent, data: {title: 'Products'}},
+ {path: 'product-list', component: On9StoreComponent, data: {title: 'On9 Store'}, canActivate: [StoreFirstGuard]},
  {path: 'services', component: ServicesComponent, data: {title: 'Services'}},
- {path: 'book-list', component: BookStoreComponent, data: { title: 'Book Store'}, canActivate: [StoreFirstGuard]},
+ {path: 'book-list', component: BookStoreComponent, data: { title: 'Book Store'}},
  {path: 'cart', component: CartDetailComponent, data: { title: 'Shopping Cart'}, canActivate: [StoreFirstGuard]},
  {path: 'checkout', component: CheckoutComponent, data: { title: 'Checkout'}, canActivate: [StoreFirstGuard]},
  {path: 'contact', component: ContactComponent, data: {title: 'Contact'}},
