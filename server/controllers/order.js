@@ -5,7 +5,7 @@ let Order = require('../models/order');
 
 let Store = require('../models/store');
 let Cart = Store.Cart;
-let Book = Store.Book;
+let Product = Store.Product;
 
 module.exports.displayOrderList = (req, res, next) => {
     Order.find((err, orderList) => {
@@ -27,15 +27,18 @@ module.exports.processAddPage = (req, res, next) => {
     // Serialize the Line Data
     for(let line of req.body.cart.lines)
     {
-        let book = new Book(
-          line.book._id,
-          line.book.name,
-          line.book.author,
-          line.book.description,
-          line.book.price  
+        console.log(line);
+        let product = new Product(
+          line.product._id,
+          line.product.name,
+          line.product.ptype,
+          line.product.description,
+          line.product.price,
+          line.product.quantity,
+          line.product.imageurl  
         );
         let quantity = line.quantity;
-        cart.lines.push({book, quantity});
+        cart.lines.push({product, quantity});
     }
     cart.itemCount = req.body.cart.itemCount;
     cart.cartPrice = req.body.cart.cartPrice;
@@ -76,15 +79,18 @@ module.exports.processEditPage = (req, res, next) => {
     // serialize the line data
     for(let line of req.body.cart.lines)
     {
-        let book = new Book(
-          line.book._id,
-          line.book.name,
-          line.book.author,
-          line.book.description,
-          line.book.price  
+        console.log(line);
+        let product = new Product(
+          line.product._id,
+          line.product.name,
+          line.product.ptype,
+          line.product.description,
+          line.product.price,
+          line.product.quantity,
+          line.product.imageurl  
         );
         let quantity = line.quantity;
-        cart.lines.push({book, quantity});
+        cart.lines.push({product, quantity});
     }
     cart.itemCount = req.body.cart.itemCount;
     cart.cartPrice = req.body.cart.cartPrice;

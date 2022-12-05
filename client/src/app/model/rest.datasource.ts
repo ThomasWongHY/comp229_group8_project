@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Book } from './book.model';
+import { Product } from './product.model';
 import { Cart } from './cart.model';
 import { Order } from './order.model';
 import { map } from 'rxjs/operators';
@@ -9,7 +9,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 
 import { User } from './user.model';
 
-const PROTOCOL = 'https';
+const PROTOCOL = 'http';
 const PORT = 3500;
 
 @Injectable()
@@ -32,13 +32,13 @@ export class RestDataSource
               private jwtService: JwtHelperService)
   {
     this.user = new User();
-    // this.baseUrl = `${PROTOCOL}://${location.hostname}:${PORT}/api/`;
-    this.baseUrl = `https://comp229-f2020-week10.herokuapp.com/api/`;
+    this.baseUrl = `${PROTOCOL}://${location.hostname}:${PORT}/api/`;
+    // this.baseUrl = `https://comp229-f2020-week10.herokuapp.com/api/`;
   }
 
-  getBooks(): Observable<Book[]>
+  getProducts(): Observable<Product[]>
   {
-    return this.http.get<Book[]>(this.baseUrl + 'book-list');
+    return this.http.get<Product[]>(this.baseUrl + 'product-list');
   }
 
   saveOrder(order: Order): Observable<Order>
@@ -52,10 +52,18 @@ export class RestDataSource
     return this.http.post<any>(this.baseUrl + 'login', user, this.httpOptions);
   }
 
+  register(user: User): Observable<any>
+  {
+    return this.http.post<any>(this.baseUrl + 'register', user, this.httpOptions);
+  }
+
   storeUserData(token: any, user: User): void
   {
     localStorage.setItem('id_token', 'Bearer ' + token);
     localStorage.setItem('user', JSON.stringify(user));
+    console.log('ab');
+    console.log(JSON.stringify(user));
+    console.log(JSON.stringify(token));
     this.authToken = token;
     this.user = user;
   }
@@ -74,25 +82,25 @@ export class RestDataSource
     return !this.jwtService.isTokenExpired(this.authToken);
   }
 
-  addBook(book: Book): Observable<Book>
+  addProduct(product: Product): Observable<Product>
   {
     this.loadToken();
-    return this.http.post<Book>(this.baseUrl + 'book-list/add', book, this.httpOptions);
+    return this.http.post<Product>(this.baseUrl + 'product-list/add', product, this.httpOptions);
   }
 
-  updateBook(book: Book): Observable<Book>
+  updateProduct(product: Product): Observable<Product>
   {
     this.loadToken();
-    return this.http.post<Book>(`${this.baseUrl}book-list/edit/${book._id}`, book, this.httpOptions);
+    return this.http.post<Product>(`${this.baseUrl}product-list/edit/${product._id}`, product, this.httpOptions);
   }
 
-  deleteBook(id: number): Observable<Book>
+  deleteProduct(id: number): Observable<Product>
   {
     this.loadToken();
 
     console.log(id);
 
-    return this.http.get<Book>(`${this.baseUrl}book-list/delete/${id}`, this.httpOptions);
+    return this.http.get<Product>(`${this.baseUrl}product-list/delete/${id}`, this.httpOptions);
   }
 
   getOrders(): Observable<Order[]>

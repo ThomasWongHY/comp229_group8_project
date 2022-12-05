@@ -33,7 +33,7 @@ mongoDB.once('open', ()=>{
 
 let indexRouter = require('../routes/index');
 let usersRouter = require('../routes/users');
-let booksRouter = require('../routes/book');
+let productsRouter = require('../routes/product');
 let ordersRouter = require('../routes/order');
 
 let app = express();
@@ -97,8 +97,9 @@ passport.use(strategy);
 // routing
 app.use('/api', indexRouter);
 app.use('/api/users', usersRouter);
-app.use('/api/book-list', booksRouter);
+app.use('/api/product-list', productsRouter);
 app.use('/api/orders', ordersRouter);
+
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../../public/index.html'));
 });

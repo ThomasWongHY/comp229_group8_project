@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
-import { BookStoreComponent } from '../book-store/book-store.component';
+import { ProductStoreComponent } from '../product-store/product-store.component';
 
 
 @Injectable()
@@ -15,7 +15,7 @@ export class StoreFirstGuard
     if (this.firstNavigation)
     {
       this.firstNavigation = false;
-      if (route.component !== BookStoreComponent)
+      if (route.component !== ProductStoreComponent)
       {
         this.router.navigateByUrl('/');
         return false;

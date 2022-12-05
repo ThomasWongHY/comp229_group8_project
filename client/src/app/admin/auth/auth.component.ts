@@ -13,8 +13,12 @@ export class AuthComponent implements OnInit
   public user: User;
   public errorMessage: string;
 
-  constructor(private router: Router,
-              private auth: AuthService) { }
+  constructor(
+    private router: Router,
+    private auth: AuthService
+    ) {
+      //alert(this.router.getCurrentNavigation().extras.state.message);
+     }
 
   ngOnInit(): void
   {
