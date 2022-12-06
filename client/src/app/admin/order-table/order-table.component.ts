@@ -21,11 +21,20 @@ export class OrderTableComponent implements OnInit
     return this.repository.getOrders().filter(o => this.includeShipped || !o.shipped);
   }
 
+  reloadCurrentRoute(){
+    const currentUrl = this.router.url;
+    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
+      this.router.navigate([currentUrl]);
+    });
+  }
+
   markShipped(order: Order): void
   {
     order.shipped = (order.shipped) ? false : true;
     this.repository.updateOrder(order);
-    this.router.navigateByUrl('/admin/main/orders');
+    alert('The order is shipped.');
+    this.reloadCurrentRoute();
+    //this.router.navigateByUrl('/admin/main/orders');
   }
 
   delete(id: number): void

@@ -25,10 +25,10 @@
             </td>
             <td>{{ line.product.name }}</td>
             <td class="text-right">
-              {{ line.product.price | currency: 'USD': 'symbol': '2.2-2'}}
+              {{ line.product.price | currency: 'USD': 'symbol': '0.2-2'}}
             </td>
             <td class="text-right">
-              {{ line.lineTotal | currency: 'USD': 'symbol': '2.2-2'}}
+              {{ line.lineTotal | currency: 'USD': 'symbol': '0.2-2'}}
             </td>
             <td class="text-center">
               <a class="btn btn-sm btn-danger"
@@ -42,7 +42,7 @@
           <tr>
             <td colspan='3' class='text-right'>Total: </td>
             <td class='text-right'>
-              {{ cart.cartPrice | currency: 'USD': 'symbol':'2.2-2'}}
+              {{ cart.cartPrice | currency: 'USD': 'symbol':'0.2-2'}}
             </td>
           </tr>
         </tfoot>
