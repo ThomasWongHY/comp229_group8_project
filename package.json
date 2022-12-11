@@ -47,12 +47,12 @@
   "main": "server.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ThomasWongHY/comp229_group8_project.git"
+    "url": "git+https://github.com/kentwkwong/comp229-f22-group8.git"
   },
   "author": "COMP229 Group 8",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ThomasWongHY/comp229_group8_project/issues"
+    "url": "https://github.com/kentwkwong/comp229-f22-group8/issues"
   },
-  "homepage": "https://github.com/ThomasWongHY/comp229_group8_project#readme"
+  "homepage": "https://github.com/kentwkwong/comp229-f22-group8#readme"
 }

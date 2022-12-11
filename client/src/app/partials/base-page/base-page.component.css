@@ -1,0 +1,21 @@
+.fulldiv{
+    position: absolute;
+    height: 90%;
+    width: 100%;
+}
+
+.container{
+   top: 130px;
+    position: relative;
+}
+
+.btn{
+    background-color:#86b3d1;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+   left: 100px;
+}
+.btn:hover{
+    background-color: #aaa0a0;
+}
