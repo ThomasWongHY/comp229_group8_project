@@ -6,7 +6,8 @@ import { AuthService } from '../../model/auth.service';
 import { User } from '../../model/user.model';
 
 @Component({
-  templateUrl: './auth.component.html'
+  templateUrl: './auth.component.html',
+  styleUrls: ['./auth.component.css']
 })
 export class AuthComponent implements OnInit
 {
